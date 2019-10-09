@@ -13,6 +13,18 @@ namespace WordLadderBFS
     }
     class Program
     {
+        public static bool IsWordMatchesWithOneLetter(string wordToCheck, string word)
+        {
+            //Check if word is formed after replacing a single character and that too exists in dictionary.
+            int found = 0;
+            for (int j = 0; j < wordToCheck.Count(); j++)
+            {
+                if (wordToCheck[j] == word[j])
+                    found++;
+            }
+            return found >= (wordToCheck.Length - 1);
+        }
+
         static void Main(string[] args)
         {
             List<Item> dictionary = new List<Item>();
@@ -58,22 +70,15 @@ namespace WordLadderBFS
                     //To check if the word is visited. If not then process else do not process
                     if (!dictionary.Single(q => q.Word.Equals(word)).visited)
                     {
-                        //Check if word is formed after replacing a single character and that too exists in dictionary.
-                        int found = 0;
-                        for (int j = 0; j < wordToCheck.Count(); j++)
-                        {
-                            if (wordToCheck[j] == word[j])
-                                found++;
-                        }
-
                         // If found in dictionary. Then mark it as visited and put it in queue
-                        if (found >= (wordToCheck.Length - 1))
+                        if (IsWordMatchesWithOneLetter(wordToCheck, word))
                         {
                             //If end word found then break the loops.
                             if (!word.Equals(end))
                             {
+                                //update dictionary as to be visited word
                                 finalStr.Add(finalQueueWord + word + "-");
-                                Item visitedItem = dictionary.Where(q => q.Word.Equals(word)).FirstOrDefault();
+                                Item visitedItem = dictionary.Single(q => q.Word.Equals(word));
                                 visitedItem.visited = true;
                                 int index = dictionary.FindIndex(q => q.Word.Equals(word));
                                 dictionary.RemoveAt(index);
@@ -92,7 +97,6 @@ namespace WordLadderBFS
                 // break while loop if end word found.
                 if (endWordFound)
                     break;
-                Console.WriteLine();
             }
             Console.WriteLine(finalStr.Single(p => p.Length == finalStr.Max(q => q.Length)));
             Console.ReadLine();
