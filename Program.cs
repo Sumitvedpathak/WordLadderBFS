@@ -16,18 +16,15 @@ namespace WordLadderBFS
         static void Main(string[] args)
         {
             List<Item> dictionary = new List<Item>();
-            dictionary.Add(new Item { Word = "CAT", visited = true });
-            dictionary.Add(new Item { Word = "BAT", visited = false });
-            dictionary.Add(new Item { Word = "COT", visited = false });
-            dictionary.Add(new Item { Word = "COG", visited = false });
-            dictionary.Add(new Item { Word = "COW", visited = false });
-            dictionary.Add(new Item { Word = "RAT", visited = false });
-            dictionary.Add(new Item { Word = "BUT", visited = false });
-            dictionary.Add(new Item { Word = "CUT", visited = false });
-            dictionary.Add(new Item { Word = "DOG", visited = false });
-            dictionary.Add(new Item { Word = "WEB", visited = false });
-            string start = "CAT";
-            string end = "DOG";
+            dictionary.Add(new Item { Word = "DAMP", visited = true });
+            dictionary.Add(new Item { Word = "LIME", visited = false });
+            dictionary.Add(new Item { Word = "LIKE", visited = false });
+            dictionary.Add(new Item { Word = "LAMP", visited = false });
+            dictionary.Add(new Item { Word = "LIMP", visited = false });
+            dictionary.Add(new Item { Word = "LINK", visited = false });
+
+            string start = "DAMP";
+            string end = "LIKE";
 
             //This list will add all possible combination of travelsal nodes.
             List<string> finalStr = new List<string>();

@@ -1,0 +1,12 @@
+﻿//dictionary.Add(new Item { Word = "CAT", visited = true });
+//dictionary.Add(new Item { Word = "BAT", visited = false });
+//dictionary.Add(new Item { Word = "COT", visited = false });
+//dictionary.Add(new Item { Word = "COG", visited = false });
+//dictionary.Add(new Item { Word = "COW", visited = false });
+//dictionary.Add(new Item { Word = "RAT", visited = false });
+//dictionary.Add(new Item { Word = "BUT", visited = false });
+//dictionary.Add(new Item { Word = "CUT", visited = false });
+//dictionary.Add(new Item { Word = "DOG", visited = false });
+//dictionary.Add(new Item { Word = "WEB", visited = false });
+//string start = "CAT";
+//string end = "DOG";
